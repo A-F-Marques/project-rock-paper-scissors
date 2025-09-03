@@ -1,0 +1,75 @@
+
+     !!Planning
+     Create a console game of rock paper scissors;
+     Console randomly chooses between rock, paper, or scissors {
+         choice made through math.random,
+         if the result is less than or equal to 0.3333 then computer is equal to Rock,
+         if the result is less than or equal to 0.6666 then result is equal to Paper,
+         if the result is greater than 0.6666 then the result is equal to Scissors,
+     }
+     user enters rock, paper or scissors;
+     compare user result with console;
+     Emit one of the 3 options{
+         User Won
+         User Lost
+         User Tied
+     }
+     The values are as follows {
+         Rock > Scissors;
+         Paper > Rock;
+         Scissors > Paper;
+         Rock === Rock;
+         Paper === Paper;
+         Scissors === Scissors;
+
+           I need to make a function called playGame in which the playRound function lives inside it,
+    I need to play 5 rounds by invoking the playRound function 5 times
+    in each round I update the variables userScore or computerScore depending on the result
+     } !!
+
+
+
+    // create variable userInput with value "0"
+    // create variable computerInput with value "0"
+    // create variable userScore with value "0"
+    // create variable computerScore with value "0"
+    //
+    // create function named getComputerInput in which {
+    //
+    //     using math.random choose a random number (0 to 1) and store in variable "X";
+    //     IF(x <= 0.3333) => computerInput = Rock;
+    //
+    //     ELSEIF(x <= 0.6666) => computerInput = Paper;
+    //
+    //     ELSE() => computerInput = Scissors
+    //
+    // }
+    //
+    // create function named getUserInput in which {
+        // userInput = prompt(rock, paper, scissors)
+        // convert userInput to lowercase
+        // return userInput
+    //}
+    //
+    //console.log(userInput)
+    //
+    //Create function named playRound with userInput and computerInput {
+    //
+    //
+    //}
+    //
+    // make function getComputerInput run;
+    // make function getUserInput run;
+    //
+    // create function named playGame in which {
+        // repeat 5 times {
+            // get user input by running getUserInput
+            // get computer input by running getComputerInput
+            // play one round by running playRound with userInput and computerInput
+            // if user wins the round, increment userScore by 1
+            // else if computer wins the round, increment computerScore by 1
+            // else (tie), do not change scores
+        //}
+        // after 5 rounds, display userScore and computerScore
+        // declare winner based on who has higher score
+    //}
