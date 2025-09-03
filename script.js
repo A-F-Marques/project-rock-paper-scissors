@@ -1,14 +1,15 @@
     
     let userScore = 0
-    // create variable userScore with value "0"
+    // create variable userScore with value of 0
 
     let computerScore = 0;
-    // create variable computerScore with value "0"
+    // create variable computerScore with value of 0
 
     let userInput = 0;
+    // create variable cuserInput with value of 0
 
     let computerInput = 0;
-    // create variable computerInput with value "0"
+    // create variable computerInput with value of 0
     
 
     function getComputerInput() {
@@ -30,8 +31,6 @@
     //     ELSE() => computerInput = Scissors;}
 
 
-    console.log(getComputerInput())
-    // console.log(getcomputerInput())
 
     function getUserInput() {
 
@@ -43,27 +42,67 @@
         // userInput = prompt(rock, paper, scissors)
         // convert userInput to lowercase
         // return userInput
+
 function playGame() {
-    for (let i = 0; i < 5 ; i++) {
+
         getComputerInput();
+        console.log(computerInput);
         getUserInput();
+        console.log(userInput);
+
         function playRound(userInput, computerInput) {
             if (userInput === computerInput) {
-                return "tie"
+                return "tie";
             }
             else if ((userInput === "rock" && computerInput === "scissors") ||
                 (userInput === "paper" && computerInput === "rock") ||
-                (userInput === "scissors" && computerInput === "paper"))
-                {return "user"}
+                (userInput === "scissors" && computerInput === "paper")) {  
+                 return "user";
+                }
             else {
-                return "computer"
+                return "computer";
             }
+    } 
+     const result = playRound(userInput, computerInput)
+        if (result === "user") {
+            userScore = (userScore + 1);
+            return userScore
+        }
+        if ( result === "computer") {
+            computerScore = (computerScore + 1);
+            return computerScore
+        }
+}
+// create function named playGame in which {
+// get user input by running getUserInput
+// get computer input by running getComputerInput
+// play one round by running playRound with userInput and computerInput
+// if user wins the round, increment userScore by 1
+// else if computer wins the round, increment computerScore by 1
+// else (tie), do not change scores
+
+ for (let i = 0; i < 5 ; i++) {
+        playGame()
+ }
+// Creates the loop that makes the playGame function run 5 times
 
 
+ function winner() {
+    if (computerScore > userScore) {
+        return "The computer won this game!!";
     }
-}
-}
-  //Create function named playRound with userInput and computerInput
+    else if (userScore > computerScore) {
+        return "You won this game!!";
+    }
+    else {
+        return "It was a Tie!!"
+    }
+ }
+ // Function for revealing the winner based on userScore and computerScore
+
+ console.log("The user score is: " + userScore + " and the computer score is: " + computerScore + " therefore...")
+ console.log(winner())
+  // Write in console the score of each and the result of it through the Winner() function
 
   
     // make function getComputerInput run;
@@ -71,14 +110,7 @@ function playGame() {
     // make function getUserInput run;
 
     
-       // create function named playGame in which {
-        // repeat 5 times {
-            // get user input by running getUserInput
-            // get computer input by running getComputerInput
-            // play one round by running playRound with userInput and computerInput
-            // if user wins the round, increment userScore by 1
-            // else if computer wins the round, increment computerScore by 1
-            // else (tie), do not change scores
+    
         //}
         // after 5 rounds, display userScore and computerScore
         // declare winner based on who has higher score
