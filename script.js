@@ -8,6 +8,9 @@
     let userInput = 0;
     // create variable cuserInput with value of 0
 
+    let round = 0;
+    // Number of rounds played
+
     let computerInput = 0;
     // create variable computerInput with value of 0
     const body = document.querySelector("body");
@@ -32,7 +35,7 @@
    
 
     function getComputerInput() {
-
+    
         computerInput = Math.random();
         if (computerInput <= 0.3333)
             computerInput = "rock";
@@ -67,6 +70,10 @@ function playGame() {
         console.log(computerInput);
         console.log(userInput);
 
+        if (round === 4) {
+            return GameWinner();
+        }
+
         function playRound(userInput, computerInput) {
             if (userInput === computerInput) {
                 return "tie";
@@ -83,13 +90,18 @@ function playGame() {
      const result = playRound(userInput, computerInput)
         if (result === "user") {
             userScore = (userScore + 1);
-            return userScore, updateScore();
+            round = (round + 1);
+            return userScore, updateScore(), round;
         }
         if ( result === "computer") {
             computerScore = (computerScore + 1);
-            return computerScore, updateScore();
+            round = (round + 1);
+            return computerScore, updateScore(), round;
         } 
-        else updateScore()
+        if (result === "tie") {
+            round = (round + 1);
+            return updateScore(), round;
+        }
 
 }
 function updateScore() {
@@ -101,6 +113,27 @@ function updateScore() {
     return body.appendChild(result);
 }
 
+function GameWinner() {
+    if (userScore > computerScore) {
+        round = 0;
+        userScore = 0;
+        computerScore = 0;
+        return alert("USER WON!!"), round, computerScore, userScore;
+    }
+    if ((userScore < computerScore)) {
+        round = 0;
+         userScore = 0;
+        computerScore = 0;
+        return alert("COMPUTER WON!!"), round, computerScore,userScore;
+    };
+    if (userScore === computerScore) {
+        round = 0;
+         userScore = 0;
+        computerScore = 0;
+        return alert("IT WAS A TIE!!"), round, computerScore, userScore;
+    }
+            
+}
 
                        /* function winner() {
                             if (computerScore > userScore) {
